@@ -638,6 +638,19 @@ h1 span {
 }
 
 .portfolio-card div { padding: 16px; }
+.portfolio-card div a {
+    display: inline-flex;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #b4ceff;
+    border-bottom: 1px solid rgba(180, 206, 255, 0.5);
+}
+
+.portfolio-card div a:hover {
+    color: #d7e6ff;
+    border-bottom-color: rgba(215, 230, 255, 0.9);
+}
+
 .testimonial-card p { margin-bottom: 10px; font-weight: 600; }
 
 .faq-list { display: grid; gap: 10px; }
