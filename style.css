@@ -3,13 +3,25 @@
     --bg-soft: #0a1022;
     --surface: rgba(17, 25, 45, 0.52);
     --surface-strong: rgba(13, 21, 38, 0.82);
-    --text: #edf3ff;
-    --muted: #9db0d2;
+    --text: #f1f6ff;
+    --muted: #aebfdd;
     --line: rgba(118, 156, 255, 0.28);
     --primary: #6da4ff;
     --success: #30c67c;
     --glow: 0 0 26px rgba(109, 164, 255, 0.2);
+    --neon-primary: 0 0 18px rgba(109, 164, 255, 0.45);
+    --neon-success: 0 0 22px rgba(48, 198, 124, 0.5);
     --radius: 18px;
+
+    /* Borda 1px com gradiente translúcido (frosted edge) */
+    --border-grad: linear-gradient(135deg,
+        rgba(176, 204, 255, 0.55) 0%,
+        rgba(120, 160, 255, 0.05) 38%,
+        rgba(48, 198, 124, 0.16) 100%);
+
+    /* Textura de ruído finíssima para vidro jateado (frosted glass) */
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.38'/%3E%3C/svg%3E");
+
     --font-title: 'Sora', sans-serif;
     --font-body: 'Manrope', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -31,6 +43,9 @@ body {
     color: var(--text);
     line-height: 1.62;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 a {
@@ -76,17 +91,26 @@ ul {
 }
 
 .bg-noise,
-.bg-aurora {
+.bg-aurora,
+.bg-beams {
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: -2;
 }
 
+/* Malha de pontos high-tech que "respira" */
 .bg-noise {
     opacity: 0.4;
     background-image: radial-gradient(rgba(201, 220, 255, 0.2) 0.6px, transparent 0.6px);
     background-size: 16px 16px;
+    will-change: transform, opacity;
+    animation: breathe 9s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { opacity: 0.32; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.035); }
 }
 
 .bg-aurora {
@@ -99,6 +123,73 @@ ul {
 @keyframes drift {
     from { transform: translateY(0); }
     to { transform: translateY(-14px); }
+}
+
+/* Feixes de luz cruzando a tela no escuro */
+.bg-beams {
+    overflow: hidden;
+}
+
+.bg-beams::before,
+.bg-beams::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 28%;
+    height: 200%;
+    background: linear-gradient(180deg, transparent 0%, rgba(109, 164, 255, 0.14) 50%, transparent 100%);
+    filter: blur(26px);
+    will-change: transform, opacity;
+    animation: beam 16s linear infinite;
+}
+
+.bg-beams::after {
+    background: linear-gradient(180deg, transparent 0%, rgba(48, 198, 124, 0.12) 50%, transparent 100%);
+    animation-duration: 22s;
+    animation-delay: -8s;
+}
+
+@keyframes beam {
+    0%   { transform: translateX(-35vw) rotate(14deg); opacity: 0; }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { transform: translateX(125vw) rotate(14deg); opacity: 0; }
+}
+
+/* Glow radial que segue o cursor (spotlight global).
+   Movido apenas via transform (translate3d) para rodar 100% no compositor,
+   sem repintar a viewport a cada frame. */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 620px;
+    height: 620px;
+    margin: -310px 0 0 -310px;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(109, 164, 255, 0.08) 0%, transparent 62%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+}
+
+.cursor-glow.is-active { opacity: 1; }
+
+/* Barra de progresso de leitura */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+    box-shadow: 0 0 14px rgba(109, 164, 255, 0.55);
+    z-index: 200;
+    will-change: transform;
 }
 
 .site-header {
@@ -127,7 +218,7 @@ ul {
 
 .brand span {
     color: var(--primary);
-    text-shadow: var(--glow);
+    text-shadow: var(--neon-primary);
 }
 
 .desktop-nav {
@@ -187,6 +278,9 @@ ul {
 }
 
 .btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -195,7 +289,7 @@ ul {
     padding: 12px 18px;
     font-weight: 800;
     border: 1px solid transparent;
-    transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, filter 0.2s ease;
 }
 
 .btn:hover {
@@ -203,10 +297,55 @@ ul {
     filter: brightness(1.05);
 }
 
+/* Brilho dinâmico que segue o cursor dentro do botão */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(120px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before { opacity: 1; }
+
 .btn-primary {
-    background: linear-gradient(140deg, #30c67c 0%, #169f5f 100%);
-    color: #f2fff8;
-    box-shadow: 0 12px 25px rgba(24, 142, 89, 0.3);
+    background: linear-gradient(140deg, #0a8048 0%, #06603a 100%);
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 30, 15, 0.5);
+    box-shadow: 0 12px 25px rgba(10, 90, 54, 0.34), 0 0 18px rgba(48, 198, 124, 0.2);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 16px 38px rgba(24, 142, 89, 0.45), 0 0 0 1px rgba(120, 255, 190, 0.2);
+}
+
+/* Spotlight de vidro: brilho radial que acompanha o cursor sobre os cards */
+.glow-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(109, 164, 255, 0.18) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-card:hover::before { opacity: 1; }
+
+.glow-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .btn-secondary {
@@ -239,32 +378,22 @@ ul {
     opacity: 0.95;
 }
 
-.ab-badge {
-    display: inline-block;
-    margin-bottom: 10px;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    color: #b8ceff;
-    border: 1px solid rgba(118, 156, 255, 0.38);
-    background: rgba(15, 25, 45, 0.6);
-    border-radius: 999px;
-    padding: 4px 10px;
-}
-
 h1, h2, h3 {
     font-family: var(--font-title);
     line-height: 1.2;
+    letter-spacing: -0.018em;
 }
 
 h1 {
     font-size: clamp(1.8rem, 7.2vw, 3.3rem);
     max-width: 17ch;
+    letter-spacing: -0.03em;
 }
 
+/* Reflexo neon apenas no ponto focal de conversão do hero */
 h1 span {
-    color: #92b9ff;
-    text-shadow: var(--glow);
+    color: #a6c6ff;
+    text-shadow: 0 0 24px rgba(109, 164, 255, 0.55), 0 0 2px rgba(166, 198, 255, 0.4);
 }
 
 .lead {
@@ -303,12 +432,41 @@ h1 span {
 .solution-card,
 .about-card,
 .final-cta {
-    background: var(--surface);
-    border: 1px solid var(--line);
+    position: relative;
+    background-color: var(--surface);
+    background-image: var(--noise);
+    background-size: 140px 140px;
+    background-blend-mode: soft-light;
+    border: 1px solid rgba(118, 156, 255, 0.14);
     border-radius: var(--radius);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px) saturate(125%);
+    -webkit-backdrop-filter: blur(12px) saturate(125%);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Borda translúcida em gradiente, recortada com mask para 1px nítido */
+.hero-card::after,
+.service-card::after,
+.portfolio-card::after,
+.testimonial-card::after,
+.faq-item::after,
+.metric-item::after,
+.problem-card::after,
+.solution-card::after,
+.about-card::after,
+.final-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--border-grad);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .hero-card { padding: 22px; }
@@ -418,7 +576,33 @@ h1 span {
     font-family: var(--font-mono);
     font-size: 0.88rem;
     color: #c3d8ff;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease,
+                box-shadow 0.25s ease, color 0.25s ease;
 }
+
+.stack-chip.reveal:hover {
+    transform: translateY(-4px);
+    color: #eaf2ff;
+    border-color: rgba(118, 156, 255, 0.6);
+    box-shadow: 0 10px 24px rgba(8, 14, 30, 0.5), var(--glow);
+}
+
+.service-card,
+.portfolio-card,
+.testimonial-card {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card.reveal:hover,
+.portfolio-card.reveal:hover,
+.testimonial-card.reveal:hover {
+    transform: translateY(-6px);
+    border-color: rgba(118, 156, 255, 0.5);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45), var(--glow);
+}
+
+.portfolio-card img { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.portfolio-card:hover img { transform: scale(1.06); }
 
 .about-card p { max-width: 80ch; }
 
@@ -553,8 +737,16 @@ h1 span {
 
 .reveal {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+    transform: translateY(26px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* will-change só enquanto o elemento ainda vai animar (definido pelo JS);
+   removido após a revelação para não manter camadas órfãs na memória. */
+.reveal.will-animate {
+    will-change: opacity, transform;
 }
 
 .reveal.visible {

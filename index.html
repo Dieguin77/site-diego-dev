@@ -30,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
         <script type="application/ld+json">
         {
@@ -128,8 +129,11 @@
 </head>
 <body>
     <a class="skip-link" href="#contato">Pular para contato</a>
-    <div class="bg-noise"></div>
-    <div class="bg-aurora"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="bg-beams" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <div class="bg-aurora" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
     <header class="site-header" id="topo">
         <div class="container header-wrap">
@@ -152,7 +156,7 @@
             </nav>
 
             <a class="btn btn-primary btn-header" href="https://wa.me/5527999933283?text=Olá+Diego!+Quero+atrair+mais+clientes+com+um+site+de+alta+conversão." target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
                 Falar com especialista
             </a>
         </div>
@@ -174,7 +178,6 @@
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
                     <p class="eyebrow">Estratégia + Design + Conversão</p>
-                    <p class="ab-badge" id="abBadge" aria-live="polite"></p>
                     <h1 id="heroHeadline">Seu próximo site precisa virar <span>canal de vendas</span>, não só cartão de visitas.</h1>
                     <p class="tech-line">STACK FOCADA EM PERFORMANCE / UX / SEO TÉCNICO</p>
                     <p class="lead" id="heroSubheadline">
@@ -188,43 +191,43 @@
                     </div>
 
                     <div class="trust-inline">
-                        <span><i class="fas fa-circle-check"></i> Atendimento em até 2h úteis</span>
-                        <span><i class="fas fa-circle-check"></i> Estratégia para B2B e B2C</span>
-                        <span><i class="fas fa-circle-check"></i> Site pronto para tráfego</span>
+                        <span><i class="fas fa-circle-check" aria-hidden="true"></i> Resposta em até 2h úteis</span>
+                        <span><i class="fas fa-circle-check" aria-hidden="true"></i> +50 projetos entregues</span>
+                        <span><i class="fas fa-circle-check" aria-hidden="true"></i> Poucas vagas por mês</span>
                     </div>
                 </div>
 
                 <aside class="hero-card reveal" aria-label="Destaques do serviço">
                     <h3>O que você recebe</h3>
                     <ul>
-                        <li><i class="fas fa-chart-line"></i> Estrutura orientada a conversão</li>
-                        <li><i class="fas fa-mobile-screen-button"></i> Performance mobile em primeiro lugar</li>
-                        <li><i class="fas fa-magnifying-glass"></i> SEO técnico básico e indexação</li>
-                        <li><i class="fas fa-rocket"></i> Entrega rápida e suporte pós-lançamento</li>
+                        <li><i class="fas fa-chart-line" aria-hidden="true"></i> Estrutura orientada a conversão</li>
+                        <li><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> Performance mobile em primeiro lugar</li>
+                        <li><i class="fas fa-magnifying-glass" aria-hidden="true"></i> SEO técnico básico e indexação</li>
+                        <li><i class="fas fa-rocket" aria-hidden="true"></i> Entrega rápida e suporte pós-lançamento</li>
                     </ul>
                     <a class="btn btn-primary btn-full" data-track="hero-diagnostico-whatsapp" href="https://wa.me/5527999933283?text=Olá+Diego!+Quero+receber+um+diagnóstico+do+meu+site." target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i>
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         Pedir diagnóstico rápido
                     </a>
                 </aside>
             </div>
         </section>
 
-        <section class="metrics section-sm reveal" aria-label="Métricas de autoridade">
+        <section class="metrics section-sm" aria-label="Métricas de autoridade">
             <div class="container metrics-grid">
-                <article class="metric-item">
+                <article class="metric-item reveal">
                     <strong class="metric-number" data-target="50">0</strong>
                     <span>Projetos entregues</span>
                 </article>
-                <article class="metric-item">
+                <article class="metric-item reveal">
                     <strong class="metric-number" data-target="45">0</strong>
                     <span>Clientes atendidos</span>
                 </article>
-                <article class="metric-item">
+                <article class="metric-item reveal">
                     <strong class="metric-number" data-target="3">0</strong>
                     <span>Anos de experiência</span>
                 </article>
-                <article class="metric-item">
+                <article class="metric-item reveal">
                     <strong class="metric-number" data-target="98">0</strong>
                     <span>Satisfação média (%)</span>
                 </article>
@@ -234,7 +237,7 @@
         <section class="section" id="servicos">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="eyebrow">Meus Serviços (Expertise)</p>
+                    <p class="eyebrow">Serviços sob medida</p>
                     <h2>Soluções sob medida para transformar seu site em um ativo de vendas</h2>
                 </div>
                 <div class="service-grid">
@@ -293,27 +296,27 @@
                     <article class="problem-card reveal" aria-labelledby="problema-title">
                         <h3 id="problema-title">O custo silencioso de um site lento e genérico</h3>
                         <ul>
-                            <li><i class="fas fa-xmark"></i> Carregamento lento reduz atenção e derruba conversão.</li>
-                            <li><i class="fas fa-xmark"></i> Design sem autoridade enfraquece sua credibilidade.</li>
-                            <li><i class="fas fa-xmark"></i> Estrutura confusa faz o lead desistir antes do contato.</li>
-                            <li><i class="fas fa-xmark"></i> Sem estratégia, você paga tráfego e perde oportunidade.</li>
+                            <li><i class="fas fa-xmark" aria-hidden="true"></i> Carregamento lento reduz atenção e derruba conversão.</li>
+                            <li><i class="fas fa-xmark" aria-hidden="true"></i> Design sem autoridade enfraquece sua credibilidade.</li>
+                            <li><i class="fas fa-xmark" aria-hidden="true"></i> Estrutura confusa faz o lead desistir antes do contato.</li>
+                            <li><i class="fas fa-xmark" aria-hidden="true"></i> Sem estratégia, você paga tráfego e perde oportunidade.</li>
                         </ul>
                     </article>
 
                     <article class="solution-card reveal" aria-labelledby="solucao-title">
                         <h3 id="solucao-title">Como meu código transforma visita em oportunidade</h3>
                         <ul>
-                            <li><i class="fas fa-check"></i> Performance otimizada para manter o usuário na página.</li>
-                            <li><i class="fas fa-check"></i> Design premium com narrativa clara e foco em decisão.</li>
-                            <li><i class="fas fa-check"></i> Estrutura orientada a conversão em cada bloco da jornada.</li>
-                            <li><i class="fas fa-check"></i> Mobile-first e SEO técnico para escala sustentável.</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Performance otimizada para manter o usuário na página.</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Design premium com narrativa clara e foco em decisão.</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Estrutura orientada a conversão em cada bloco da jornada.</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Mobile-first e SEO técnico para escala sustentável.</li>
                         </ul>
                     </article>
                 </div>
 
                 <div class="section-cta-inline reveal">
-                    <p>Seu site está ajudando seu comercial ou bloqueando seu crescimento?</p>
-                    <a class="btn btn-primary" data-track="problema-solucao-cta" href="#contato">Quero diagnosticar meu site</a>
+                    <p>Cada dia com um site fraco é dinheiro deixado na mesa para o concorrente. Vamos virar esse jogo?</p>
+                    <a class="btn btn-primary" data-track="problema-solucao-cta" href="#contato">Quero meu diagnóstico gratuito</a>
                 </div>
             </div>
         </section>
@@ -324,16 +327,16 @@
                     <p class="eyebrow">Tech Stack</p>
                     <h2 id="stack-title">Tecnologias que sustentam performance, estabilidade e escala</h2>
                 </div>
-                <ul class="stack-grid reveal" aria-label="Tecnologias principais">
-                    <li class="stack-chip">React</li>
-                    <li class="stack-chip">Node.js</li>
-                    <li class="stack-chip">JavaScript</li>
-                    <li class="stack-chip">TypeScript</li>
-                    <li class="stack-chip">Next.js</li>
-                    <li class="stack-chip">REST APIs</li>
-                    <li class="stack-chip">Git / GitHub</li>
-                    <li class="stack-chip">HTML5 / CSS3</li>
-                    <li class="stack-chip">SQL / NoSQL</li>
+                <ul class="stack-grid" aria-label="Tecnologias principais">
+                    <li class="stack-chip reveal">React</li>
+                    <li class="stack-chip reveal">Node.js</li>
+                    <li class="stack-chip reveal">JavaScript</li>
+                    <li class="stack-chip reveal">TypeScript</li>
+                    <li class="stack-chip reveal">Next.js</li>
+                    <li class="stack-chip reveal">REST APIs</li>
+                    <li class="stack-chip reveal">Git / GitHub</li>
+                    <li class="stack-chip reveal">HTML5 / CSS3</li>
+                    <li class="stack-chip reveal">SQL / NoSQL</li>
                 </ul>
             </div>
         </section>
@@ -341,7 +344,7 @@
         <section class="section soft-bg" id="sobre" aria-labelledby="sobre-title">
             <div class="container">
                 <article class="about-card reveal">
-                    <p class="eyebrow">Sobre Mim / Autoridade</p>
+                    <p class="eyebrow">Sobre mim</p>
                     <h2 id="sobre-title">Desenvolvedor focado em qualidade técnica, prazo e impacto real no negócio</h2>
                     <p>
                         Trabalho com visão estratégica: cada decisão de UX e cada linha de código são orientadas para
@@ -354,10 +357,11 @@
         <section class="section" id="provas">
             <div class="container">
                 <div class="section-heading reveal">
-                    <p class="eyebrow">Autoridade e Prova Social</p>
+                    <p class="eyebrow">Resultados e prova social</p>
                     <h2>Projetos reais, resultados consistentes e confiança de clientes</h2>
                     <p class="section-intro">
-                        Cada projeto é desenhado para gerar percepção de valor e aumentar a taxa de contato qualificado.
+                        Mais de 50 projetos entregues, 45+ clientes atendidos e 98% de satisfação. Cada entrega é desenhada para
+                        gerar percepção de valor e aumentar a taxa de contato qualificado.
                     </p>
                 </div>
 
@@ -423,38 +427,38 @@
                 </div>
                 <div class="faq-list">
                     <article class="faq-item reveal">
-                        <button class="faq-question" aria-expanded="false">
+                        <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
                             Qual é o prazo médio de entrega?
-                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-plus" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
                             <p>Landing pages costumam levar de 5 a 10 dias úteis. Projetos institucionais variam de 10 a 20 dias, conforme escopo.</p>
                         </div>
                     </article>
                     <article class="faq-item reveal">
-                        <button class="faq-question" aria-expanded="false">
+                        <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
                             Você atende empresas e profissionais autônomos?
-                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-plus" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
                             <p>Sim. O projeto é adaptado para cada contexto, seja B2B, B2C, negócios locais ou posicionamento pessoal.</p>
                         </div>
                     </article>
                     <article class="faq-item reveal">
-                        <button class="faq-question" aria-expanded="false">
+                        <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
                             Você oferece manutenção após a entrega?
-                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-plus" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
                             <p>Sim. Posso atuar com suporte contínuo, melhorias evolutivas e ajustes técnicos para manter o projeto performando.</p>
                         </div>
                     </article>
                     <article class="faq-item reveal">
-                        <button class="faq-question" aria-expanded="false">
+                        <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
                             Como funciona o pagamento?
-                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-plus" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
                             <p>Modelo padrão: 50% na aprovação da proposta e 50% na entrega. Em projetos maiores, avaliamos parcelamento.</p>
                         </div>
                     </article>
@@ -467,26 +471,26 @@
     <footer class="site-footer" id="contato">
         <div class="container footer-wrap">
             <div class="final-cta reveal">
-                <p class="eyebrow">Footer & Final CTA</p>
-                <h2>Vamos construir seu próximo projeto?</h2>
-                <p>Receba um plano claro para tirar sua ideia do papel com performance, design premium e foco em conversão.</p>
-                <a class="btn btn-primary" data-track="footer-final-whatsapp" href="https://wa.me/5527999933283?text=Olá+Diego!+Quero+tirar+meu+projeto+do+papel+com+uma+landing+de+alta+conversão." target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                    Quero tirar meu projeto do papel
+                <p class="eyebrow">Última chamada</p>
+                <h2>Restam poucas vagas na agenda deste mês</h2>
+                <p>Garanta a sua antes que feche: você recebe um plano claro para tirar a ideia do papel com performance, design premium e foco em conversão. Resposta em até 2h úteis.</p>
+                <a class="btn btn-primary" data-track="footer-final-whatsapp" href="https://wa.me/5527999933283?text=Olá+Diego!+Quero+garantir+minha+vaga+na+agenda+deste+mês+para+uma+landing+de+alta+conversão." target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    Quero garantir minha vaga
                 </a>
             </div>
 
             <p>DiegoDev © 2026 | Desenvolvimento web orientado a conversão.</p>
             <div class="footer-social">
-                <a href="https://www.linkedin.com/in/diegobatistt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/Dieguin77" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://wa.me/5527999933283" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/diegobatistt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="https://github.com/Dieguin77" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://wa.me/5527999933283" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
             </div>
         </div>
     </footer>
 
     <a href="https://wa.me/5527999933283?text=Olá+Diego!+Vi+seu+site+e+quero+atrair+mais+clientes." class="whatsapp-float" data-track="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <script src="script.js"></script>
