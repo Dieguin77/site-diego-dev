@@ -354,7 +354,7 @@ function initLeadForm() {
             'Pode me enviar os proximos passos?'
         ].join('\n');
 
-        const whatsappUrl = `https://wa.me/5527999933283?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/553384251297?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     });
 }
