@@ -205,7 +205,7 @@ function initPointerEffects() {
 
     // Spotlight de vidro nos cards.
     const glowCards = document.querySelectorAll(
-        '.service-card, .portfolio-card, .testimonial-card, .problem-card, .solution-card, .hero-card, .about-card, .final-cta'
+        '.service-card, .portfolio-card, .testimonial-card, .problem-card, .solution-card, .hero-card, .about-card, .final-cta, .featured-project'
     );
     glowCards.forEach((card) => {
         card.classList.add('glow-card');
