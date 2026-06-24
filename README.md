@@ -36,14 +36,12 @@ GitHub: https://github.com/Dieguin77
 
 ---
 
-### 🚀 Projetos
+## 🚀 Projetos
 
-![Projetos](imagem/projetos.png)
-
----
-
-### 💼 Serviços
-
-![Serviços](imagem/servicos.png)
+![Projetos](imagem/Projetos.png)
 
 ---
+
+## 💼 Serviços
+
+![Serviços](imagem/Serviços.png)
