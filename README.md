@@ -29,8 +29,3 @@ Diego Batista Gomes Moraes
 GitHub: https://github.com/Dieguin77
 
 
-
-![Projetos](<img width="332" height="317" alt="image" src="https://github.com/user-attachments/assets/752c6310-1fea-44c0-949d-944cf1046dc6" />
-)
-
-
