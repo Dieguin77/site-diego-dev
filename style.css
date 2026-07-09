@@ -678,14 +678,199 @@ h1 span {
     border-bottom-color: rgba(215, 230, 255, 0.9);
 }
 
-.card-image--logo {
-    background: rgba(8, 14, 28, 0.9);
+/* ============================================================
+   CONTACT SECTION — Formulário de lead
+   ============================================================ */
+
+.contact-grid {
+    display: grid;
+    gap: 32px;
 }
 
-.card-image--logo img {
-    object-fit: contain;
-    object-position: center;
-    padding: 20px;
+.lead-form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-group {
+    display: grid;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+    background: rgba(13, 21, 38, 0.7);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.lead-form input::placeholder,
+.lead-form textarea::placeholder {
+    color: rgba(174, 191, 221, 0.45);
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+    border-color: rgba(109, 164, 255, 0.6);
+    box-shadow: 0 0 0 3px rgba(109, 164, 255, 0.12);
+    outline: none;
+}
+
+.lead-form input.input-error,
+.lead-form select.input-error,
+.lead-form textarea.input-error {
+    border-color: rgba(255, 90, 100, 0.7);
+    box-shadow: 0 0 0 3px rgba(255, 90, 100, 0.12);
+}
+
+.lead-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.lead-form select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236da4ff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.lead-form select option { background: #0a1022; }
+
+.form-note {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: -4px;
+}
+
+.contact-info {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--surface);
+    background-image: var(--noise);
+    background-size: 140px 140px;
+    background-blend-mode: soft-light;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+    color: var(--text);
+}
+
+.contact-card:hover {
+    border-color: rgba(109, 164, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.contact-card i {
+    font-size: 1.25rem;
+    color: var(--primary);
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.contact-card strong {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.contact-card span {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+@media (min-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr 320px; }
+}
+
+/* ============================================================
+   LGPD BANNER
+   ============================================================ */
+
+.lgpd-banner {
+    position: fixed;
+    bottom: 82px;
+    left: 16px;
+    right: 16px;
+    max-width: 520px;
+    background: var(--surface-strong);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    z-index: 150;
+    animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lgpd-banner[hidden] { display: none; }
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.lgpd-banner p {
+    flex: 1;
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.55;
+    min-width: 200px;
+}
+
+.lgpd-accept {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   PORTFOLIO — card solitário centralizado
+   ============================================================ */
+
+@media (min-width: 860px) {
+    .portfolio-card:last-child:nth-child(2n+1) {
+        grid-column: 1 / span 2;
+        justify-self: center;
+        width: calc(50% - 7px);
+    }
 }
 
 /* ============================================================

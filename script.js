@@ -69,7 +69,9 @@ function trackEvent(eventName, metadata = {}) {
     existing.push(payload);
     localStorage.setItem(historyKey, JSON.stringify(existing.slice(-100)));
 
-    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+    if (typeof gtag === 'function') {
+        gtag('event', eventName, metadata);
+    } else if (window.dataLayer && Array.isArray(window.dataLayer)) {
         window.dataLayer.push(payload);
     }
 }
@@ -335,6 +337,14 @@ function initLeadForm() {
     const form = document.getElementById('leadForm');
     if (!form) return;
 
+    const requiredIds = ['nome', 'telefone'];
+
+    requiredIds.forEach((id) => {
+        document.getElementById(id)?.addEventListener('input', (e) => {
+            e.target.classList.remove('input-error');
+        });
+    });
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -343,19 +353,44 @@ function initLeadForm() {
         const tipo = document.getElementById('tipo')?.value.trim() || '';
         const detalhes = document.getElementById('detalhes')?.value.trim() || '';
 
+        let valid = true;
+        if (!nome) { document.getElementById('nome')?.classList.add('input-error'); valid = false; }
+        if (!telefone) { document.getElementById('telefone')?.classList.add('input-error'); valid = false; }
+        if (!valid) return;
+
+        trackEvent('lead_form_submit', {
+            tipo_projeto: tipo || 'nao_informado',
+            ab_variant: localStorage.getItem('lp_ab_variant_hero') || 'NA'
+        });
+
         const message = [
             'Ola Diego! Vim pela landing page e quero um orcamento.',
             '',
             `Nome: ${nome}`,
             `WhatsApp: ${telefone}`,
-            `Tipo de projeto: ${tipo}`,
-            `Objetivo principal: ${detalhes}`,
+            `Tipo de projeto: ${tipo || 'Nao informado'}`,
+            `Objetivo principal: ${detalhes || 'Nao informado'}`,
             '',
             'Pode me enviar os proximos passos?'
         ].join('\n');
 
         const whatsappUrl = `https://wa.me/553384251297?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    });
+}
+
+function initLGPD() {
+    const banner = document.getElementById('lgpdBanner');
+    const acceptBtn = document.getElementById('lgpdAccept');
+    if (!banner || !acceptBtn) return;
+
+    if (!localStorage.getItem('lgpd_accepted')) {
+        setTimeout(() => { banner.hidden = false; }, 2000);
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('lgpd_accepted', '1');
+        banner.hidden = true;
     });
 }
 
@@ -370,4 +405,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScrollAndSpy();
     initConversionTracking();
     initLeadForm();
+    initLGPD();
 });

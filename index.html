@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvedor Web em MG | Landing Pages e Sites de Alta Conversao
-        
-        - DiegoDev</title>
+    <title>Desenvolvedor Web no ES | Landing Pages e Sites de Alta Conversão - DiegoDev</title>
     <meta name="description" content="Desenvolvedor web no Espirito Santo para empresas e profissionais no Brasil e exterior. Criacao de landing pages, sites institucionais e sistemas com foco em conversao e performance.">
     <meta name="keywords" content="desenvolvedor web, desenvolvedor web espirito santo, criacao de sites, landing page, site institucional, desenvolvimento web brasil">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -33,6 +31,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+
+    <!-- Google Analytics GA4 — substitua G-XXXXXXXXXX pelo seu Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
         <script type="application/ld+json">
         {
@@ -155,6 +162,7 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#provas">Provas</a>
                 <a href="#faq">FAQ</a>
+                <a href="#contato">Contato</a>
             </nav>
 
             <a class="btn btn-primary btn-header" href="https://wa.me/553384251297?text=Olá+Diego!+Quero+atrair+mais+clientes+com+um+site+de+alta+conversão." target="_blank" rel="noopener noreferrer">
@@ -389,7 +397,7 @@
                             <i class="fas fa-star" aria-hidden="true"></i> Projeto em Destaque
                         </span>
                         <div class="screenshot-frame">
-                            <img src="imagem/print-tocando-pra-valer.jpg" alt="Tocando Pra Valer — plataforma musical para músicos e ministérios de louvor">
+                            <img src="imagem/print-tocando-pra-valer.jpg" alt="Tocando Pra Valer — plataforma musical para músicos e ministérios de louvor" loading="lazy">
                         </div>
                     </div>
                     <div class="featured-project-content">
@@ -440,7 +448,7 @@
                 <div class="portfolio-grid">
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/esli.jpg" alt="Site para advogado previdenciário Dr. Esli Silva">
+                            <img src="imagem/esli.jpg" alt="Site para advogado previdenciário Dr. Esli Silva" loading="lazy">
                         </div>
                         <div>
                             <h3>Advocacia Previdenciária</h3>
@@ -450,7 +458,7 @@
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/decoracompany.png" alt="Site para Gesso Decoracompany - Drywall e Gesso">
+                            <img src="imagem/decoracompany.png" alt="Site para Gesso Decoracompany - Drywall e Gesso" loading="lazy">
                         </div>
                         <div>
                             <h3>Gesso & Drywall</h3>
@@ -460,7 +468,7 @@
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/welding.png" alt="CR Welding - Projeto internacional de construção industrial">
+                            <img src="imagem/welding.png" alt="CR Welding - Projeto internacional de construção industrial" loading="lazy">
                         </div>
                         <div>
                             <h3>Projeto Internacional</h3>
@@ -470,7 +478,7 @@
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/print-pr-gladston.jpg" alt="Projeto para autor e palestrante">
+                            <img src="imagem/print-pr-gladston.jpg" alt="Projeto para autor e palestrante" loading="lazy">
                         </div>
                         <div>
                             <h3>Autor e Palestrante</h3>
@@ -480,7 +488,7 @@
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/home-rucilan.jpeg" alt="Honório - Consultor de Consórcios e Investimentos">
+                            <img src="imagem/home-rucilan.jpeg" alt="Honório - Consultor de Consórcios e Investimentos" loading="lazy">
                         </div>
                         <div>
                             <h3>Consultor de Consórcios</h3>
@@ -552,9 +560,82 @@
             </div>
         </section>
 
+        <section class="section" id="contato" aria-labelledby="contato-title">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Vamos conversar</p>
+                    <h2 id="contato-title">Pronto para transformar seu site em um ativo de vendas?</h2>
+                    <p class="section-intro">Preencha o formulário e receba uma proposta diretamente no seu WhatsApp em até 2h úteis.</p>
+                </div>
+                <div class="contact-grid">
+                    <form id="leadForm" class="lead-form reveal" novalidate aria-label="Formulário de contato">
+                        <div class="form-group">
+                            <label for="nome">Seu nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 9 0000-0000" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo de projeto</label>
+                            <select id="tipo" name="tipo">
+                                <option value="">Selecione o tipo...</option>
+                                <option value="Landing Page">Landing Page</option>
+                                <option value="Site Institucional">Site Institucional</option>
+                                <option value="Sistema Web">Sistema Web</option>
+                                <option value="Otimização de Performance">Otimização de Performance</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="detalhes">Objetivo principal</label>
+                            <textarea id="detalhes" name="detalhes" rows="4" placeholder="Ex: Preciso de uma landing page para captar clientes para minha clínica..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" data-track="lead-form-submit">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            Enviar proposta pelo WhatsApp
+                        </button>
+                        <p class="form-note">Resposta em até 2h úteis &bull; Sem compromisso</p>
+                    </form>
+
+                    <div class="contact-info reveal">
+                        <a class="contact-card" href="https://wa.me/553384251297" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+55 33 8425-1297</span>
+                            </div>
+                        </a>
+                        <a class="contact-card" href="mailto:diegobatistt@gmail.com">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <strong>E-mail</strong>
+                                <span>diegobatistt@gmail.com</span>
+                            </div>
+                        </a>
+                        <a class="contact-card" href="https://www.linkedin.com/in/diegobatistt" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <span>diegobatistt</span>
+                            </div>
+                        </a>
+                        <a class="contact-card" href="https://github.com/Dieguin77" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <div>
+                                <strong>GitHub</strong>
+                                <span>Dieguin77</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="site-footer" id="contato">
+    <footer class="site-footer">
         <div class="container footer-wrap">
             <div class="final-cta reveal">
                 <p class="eyebrow">Última chamada</p>
@@ -578,6 +659,11 @@
     <a href="https://wa.me/553384251297?text=Olá+Diego!+Vi+seu+site+e+quero+atrair+mais+clientes." class="whatsapp-float" data-track="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
+
+    <div class="lgpd-banner" id="lgpdBanner" role="dialog" aria-live="polite" aria-label="Aviso de privacidade" hidden>
+        <p>Este site usa armazenamento local para melhorar sua experiência e medir conversões. Nenhum dado é compartilhado com terceiros.</p>
+        <button class="btn btn-primary lgpd-accept" id="lgpdAccept">Entendido</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
