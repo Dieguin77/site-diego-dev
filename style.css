@@ -503,13 +503,18 @@ h1 span {
 .section-intro { margin-top: 10px; color: var(--muted); max-width: 68ch; }
 
 .service-grid,
-.portfolio-grid,
 .testimonial-grid,
 .problem-solution-grid,
 .authority-strip,
 .stack-grid {
     display: grid;
     gap: 14px;
+}
+
+.portfolio-grid {
+    display: grid;
+    gap: 14px;
+    align-items: start;
 }
 
 .service-grid { grid-template-columns: 1fr; }
@@ -657,17 +662,30 @@ h1 span {
 }
 
 .portfolio-card div a {
-    display: inline-flex;
+    display: block;
     margin-top: auto;
-    padding-top: 10px;
+    padding-top: 14px;
     font-weight: 700;
     color: #b4ceff;
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid rgba(180, 206, 255, 0.5);
+    width: fit-content;
 }
 
 .portfolio-card div a:hover {
     color: #d7e6ff;
+    border-top-color: rgba(118, 156, 255, 0.5);
     border-bottom-color: rgba(215, 230, 255, 0.9);
+}
+
+.card-image--logo {
+    background: rgba(8, 14, 28, 0.9);
+}
+
+.card-image--logo img {
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
 }
 
 /* ============================================================
