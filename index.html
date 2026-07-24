@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvedor Web Full Stack | Landing Pages e Sites de Alta Conversão - DiegoDev</title>
-    <meta name="description" content="Desenvolvedor web full stack para empresas e profissionais no Brasil e exterior. Criacao de landing pages, sites institucionais e sistemas com foco em conversao e performance.">
+    <title>Desenvolvedor Web Full Stack | Landing Pages de Alta Conversão — DiegoDev</title>
+    <meta name="description" content="Desenvolvedor web full stack para empresas e profissionais no Brasil e exterior. Criação de landing pages, sites institucionais e sistemas web com foco em conversão e performance.">
     <meta name="keywords" content="desenvolvedor web, desenvolvedor web minas gerais, desenvolvedor web governador valadares, criacao de sites, landing page, site institucional, desenvolvimento web brasil">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="DiegoDev">
     <meta name="theme-color" content="#060914">
     <link rel="canonical" href="https://diegodev.dev.br/">
     <link rel="icon" type="image/png" href="imagem/favycon.png">
+    <link rel="apple-touch-icon" href="imagem/favycon.png">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="DiegoDev">
     <meta property="og:title" content="Desenvolvedor Web Full Stack | Landing Pages e Sites de Alta Conversão - DiegoDev">
-    <meta property="og:description" content="Transforme seu site em um canal de vendas com estrategia, design e performance.">
+    <meta property="og:description" content="Transforme seu site em um canal de vendas com estratégia, design e performance.">
     <meta property="og:url" content="https://diegodev.dev.br/">
     <meta property="og:image" content="https://diegodev.dev.br/imagem/og-cover.svg">
     <meta property="og:image:width" content="1200">
@@ -25,19 +26,33 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Desenvolvedor Web Full Stack | Landing Pages e Sites de Alta Conversão - DiegoDev">
-    <meta name="twitter:description" content="Criacao de sites, landing pages e sistemas com foco em conversao e performance.">
+    <meta name="twitter:description" content="Criação de sites, landing pages e sistemas web com foco em conversão e performance.">
     <meta name="twitter:image" content="https://diegodev.dev.br/imagem/og-cover.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" as="style" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" as="style" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
     <link rel="stylesheet" href="style.css">
     <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
-    <!-- Google Analytics GA4 — substitua G-18HRSQXSXP pelo seu Measurement ID -->
+    <!-- GA4 Consent Mode v2 — padrão negado até aceite do banner LGPD -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'wait_for_update': 500
+        });
+        if (localStorage.getItem('lgpd_accepted')) {
+            gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-18HRSQXSXP"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -50,12 +65,19 @@
         {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
+            "@id": "https://diegodev.dev.br/#professionalservice",
             "name": "DiegoDev",
             "url": "https://diegodev.dev.br/",
-            "description": "Desenvolvimento de landing pages, sites institucionais e sistemas web com foco em conversao e performance.",
-            "areaServed": ["Minas Gerais", "Brasil", "Remote"],
-            "telephone": "+55 33 8425-1297",
+            "description": "Desenvolvimento de landing pages, sites institucionais e sistemas web com foco em conversão e performance.",
+            "areaServed": ["Minas Gerais", "Brasil", "Worldwide"],
+            "telephone": "+553384251297",
             "email": "diegobatistt@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Governador Valadares",
+                "addressRegion": "MG",
+                "addressCountry": "BR"
+            },
             "sameAs": [
                 "https://www.linkedin.com/in/diegobatistt",
                 "https://github.com/Dieguin77"
@@ -64,7 +86,7 @@
                 "Landing Pages",
                 "Sites Institucionais",
                 "Sistemas Web",
-                "Integracoes"
+                "Integrações"
             ]
         }
         </script>
@@ -84,8 +106,8 @@
                     ],
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "contactType": "customer support",
-                        "telephone": "+55 33 8425-1297",
+                        "contactType": "sales",
+                        "telephone": "+553384251297",
                         "email": "diegobatistt@gmail.com",
                         "availableLanguage": ["pt-BR"]
                     }
@@ -107,26 +129,26 @@
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "Qual e o prazo medio de entrega?",
+                    "name": "Qual é o prazo médio de entrega?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Landing pages costumam levar de 5 a 10 dias uteis. Projetos institucionais variam de 10 a 20 dias, conforme escopo."
+                        "text": "Landing pages costumam levar de 5 a 10 dias úteis. Projetos institucionais variam de 10 a 20 dias, conforme escopo."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "Voce atende empresas e profissionais autonomos?",
+                    "name": "Você atende empresas e profissionais autônomos?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Sim. O projeto e adaptado para cada contexto, seja B2B, B2C, negocios locais ou posicionamento pessoal."
+                        "text": "Sim. O projeto é adaptado para cada contexto, seja B2B, B2C, negócios locais ou posicionamento pessoal."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "Voce oferece manutencao apos a entrega?",
+                    "name": "Você oferece manutenção após a entrega?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Sim. Posso atuar com suporte continuo, melhorias evolutivas e ajustes tecnicos para manter o projeto performando."
+                        "text": "Sim. Posso atuar com suporte contínuo, melhorias evolutivas e ajustes técnicos para manter o projeto performando."
                     }
                 },
                 {
@@ -134,10 +156,32 @@
                     "name": "Como funciona o pagamento?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Modelo padrao: 50% na aprovacao da proposta e 50% na entrega. Em projetos maiores, avaliamos parcelamento."
+                        "text": "Modelo padrão: 50% na aprovação da proposta e 50% na entrega. Em projetos maiores, avaliamos parcelamento."
                     }
                 }
             ]
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://diegodev.dev.br/#diego",
+            "name": "Diego",
+            "jobTitle": "Desenvolvedor Web Full Stack",
+            "url": "https://diegodev.dev.br/",
+            "email": "diegobatistt@gmail.com",
+            "telephone": "+553384251297",
+            "sameAs": [
+                "https://www.linkedin.com/in/diegobatistt",
+                "https://github.com/Dieguin77"
+            ],
+            "worksFor": {
+                "@type": "Organization",
+                "name": "DiegoDev",
+                "url": "https://diegodev.dev.br/"
+            }
         }
         </script>
 </head>
@@ -161,8 +205,8 @@
 
             <nav class="desktop-nav" aria-label="Navegação principal">
                 <a href="#hero">Início</a>
-                <a href="#problema-solucao">Problema x Solução</a>
                 <a href="#servicos">Serviços</a>
+                <a href="#problema-solucao">Problema x Solução</a>
                 <a href="#stack">Tech Stack</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#provas">Provas</a>
@@ -452,7 +496,7 @@
                             <i class="fas fa-star" aria-hidden="true"></i> Projeto em Destaque
                         </span>
                         <div class="screenshot-frame">
-                            <img src="imagem/print-tocando-pra-valer.jpg" alt="Tocando Pra Valer — plataforma musical para músicos e ministérios de louvor" fetchpriority="high" width="1280" height="720">
+                            <img src="imagem/print-tocando-pra-valer.jpg" alt="Tocando Pra Valer — plataforma musical para músicos e ministérios de louvor" loading="lazy" width="1280" height="720">
                         </div>
                     </div>
                     <div class="featured-project-content">
@@ -543,7 +587,7 @@
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/home-rucilan.jpeg" alt="Honório - Consultor de Consórcios e Investimentos" loading="lazy" width="1280" height="800">
+                            <img src="imagem/home-rucilan.jpeg" alt="Rucirlan — Consultor de Consórcios e Investimentos" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Consultor de Consórcios</h3>
@@ -608,11 +652,11 @@
             </div>
         </section>
 
-        <section class="section soft-bg" id="faq">
+        <section class="section soft-bg" id="faq" aria-labelledby="faq-title">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="eyebrow">Perguntas frequentes</p>
-                    <h2>Tire dúvidas sobre prazo, manutenção e investimento</h2>
+                    <h2 id="faq-title">Tire dúvidas sobre prazo, manutenção e investimento</h2>
                 </div>
                 <div class="faq-list">
                     <article class="faq-item reveal">
@@ -692,6 +736,7 @@
                             Enviar proposta pelo WhatsApp
                         </button>
                         <p class="form-note">Resposta em até 2h úteis &bull; Sem compromisso</p>
+                        <p id="formAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></p>
                     </form>
 
                     <div class="contact-info reveal">
@@ -755,7 +800,7 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <div class="lgpd-banner" id="lgpdBanner" role="dialog" aria-live="polite" aria-label="Aviso de privacidade" hidden>
+    <div class="lgpd-banner" id="lgpdBanner" role="dialog" aria-modal="true" aria-live="polite" aria-label="Aviso de privacidade" hidden>
         <p>Este site usa armazenamento local para melhorar sua experiência e medir conversões. Nenhum dado é compartilhado com terceiros.</p>
         <button class="btn btn-primary lgpd-accept" id="lgpdAccept">Entendido</button>
     </div>

@@ -90,6 +90,24 @@ ul {
     left: 10px;
 }
 
+/* Visível apenas para screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* M1 — LCP: hero copy visível desde o primeiro frame; só anima transform */
+.hero-copy.reveal {
+    opacity: 1;
+}
+
 .bg-noise,
 .bg-aurora,
 .bg-beams {

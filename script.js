@@ -9,6 +9,7 @@ function initMobileMenu() {
         menuToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
         menuToggle.setAttribute('aria-expanded', String(!expanded));
+        menuToggle.setAttribute('aria-label', !expanded ? 'Fechar menu' : 'Abrir menu');
     });
 
     mobileMenu.querySelectorAll('a').forEach((link) => {
@@ -341,6 +342,8 @@ function initLeadForm() {
         });
     });
 
+    const announcer = document.getElementById('formAnnouncer');
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -350,9 +353,14 @@ function initLeadForm() {
         const detalhes = document.getElementById('detalhes')?.value.trim() || '';
 
         let valid = true;
-        if (!nome) { document.getElementById('nome')?.classList.add('input-error'); valid = false; }
-        if (!telefone) { document.getElementById('telefone')?.classList.add('input-error'); valid = false; }
-        if (!valid) return;
+        const missing = [];
+        if (!nome) { document.getElementById('nome')?.classList.add('input-error'); valid = false; missing.push('nome'); }
+        if (!telefone) { document.getElementById('telefone')?.classList.add('input-error'); valid = false; missing.push('WhatsApp'); }
+        if (!valid) {
+            if (announcer) announcer.textContent = 'Preencha os campos obrigatórios: ' + missing.join(' e ') + '.';
+            return;
+        }
+        if (announcer) announcer.textContent = '';
 
         trackEvent('lead_form_submit', {
             tipo_projeto: tipo || 'nao_informado',
@@ -380,10 +388,12 @@ function initLeadForm() {
             submitBtn.disabled = true;
             submitBtn.classList.add('btn-success');
             submitBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Proposta enviada! Verifique seu WhatsApp';
+            if (announcer) announcer.textContent = 'Proposta enviada com sucesso! Verifique seu WhatsApp em instantes.';
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('btn-success');
                 submitBtn.innerHTML = originalHTML;
+                if (announcer) announcer.textContent = '';
             }, 5000);
         }
     });
@@ -409,6 +419,9 @@ function initLGPD() {
     acceptBtn.addEventListener('click', () => {
         localStorage.setItem('lgpd_accepted', '1');
         banner.hidden = true;
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
     });
 }
 
