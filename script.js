@@ -27,32 +27,28 @@ function initHeroABTest() {
 
     if (!headline || !subheadline || !primaryCta) return;
 
-    const variants = {
-        A: {
-            headline: 'Enquanto você espera, seus concorrentes fecham os clientes que <span>seriam seus</span>.',
-            subheadline:
-                'Crio landing pages e sites de alta conversão que geram leads qualificados todos os dias. Atendo poucos projetos por mês para garantir prazo e qualidade — a agenda preenche rápido.',
-            cta: 'Quero garantir minha vaga'
-        },
-        B: {
-            headline: 'Transformo seu site em uma <span>máquina de oportunidades</span> para o seu comercial.',
-            subheadline:
-                'Mais de 50 projetos entregues e 98% de satisfação. Estratégia, UX e código de alta performance trabalhando para gerar contatos qualificados com previsibilidade.',
-            cta: 'Quero atrair mais clientes'
-        }
+    // Variant A é renderizada diretamente no HTML — sem manipulação de DOM para 50% dos visitantes.
+    // Apenas o variant B requer substituição, eliminando CLS para usuários do variant A.
+    const variantB = {
+        headline: 'Transformo seu site em uma <span>máquina de oportunidades</span> para o seu comercial.',
+        subheadline: 'Mais de 50 projetos entregues e 98% de satisfação. Estratégia, UX e código de alta performance trabalhando para gerar contatos qualificados com previsibilidade.',
+        cta: 'Quero atrair mais clientes'
     };
 
     const storageKey = 'lp_ab_variant_hero';
     let variant = localStorage.getItem(storageKey);
 
-    if (!variant || !variants[variant]) {
+    if (!variant) {
         variant = Math.random() < 0.5 ? 'A' : 'B';
         localStorage.setItem(storageKey, variant);
     }
 
-    headline.innerHTML = variants[variant].headline;
-    subheadline.textContent = variants[variant].subheadline;
-    primaryCta.textContent = variants[variant].cta;
+    if (variant === 'B') {
+        headline.innerHTML = variantB.headline;
+        subheadline.textContent = variantB.subheadline;
+        primaryCta.textContent = variantB.cta;
+    }
+
     primaryCta.setAttribute('data-ab-variant', variant);
 }
 
