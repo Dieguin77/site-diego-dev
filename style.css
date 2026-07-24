@@ -322,6 +322,14 @@ ul {
     box-shadow: 0 16px 38px rgba(24, 142, 89, 0.45), 0 0 0 1px rgba(120, 255, 190, 0.2);
 }
 
+.btn-success,
+.btn-success:hover {
+    background: linear-gradient(140deg, #065e38 0%, #044526 100%) !important;
+    cursor: default !important;
+    transform: none !important;
+    opacity: 0.88;
+}
+
 /* Spotlight de vidro: brilho radial que acompanha o cursor sobre os cards */
 .glow-card {
     position: relative;

@@ -290,7 +290,7 @@ function initSmoothScrollAndSpy() {
 
             event.preventDefault();
             const offset = 84;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top, behavior: 'smooth' });
         });
     });
@@ -372,6 +372,20 @@ function initLeadForm() {
 
         const whatsappUrl = `https://wa.me/553384251297?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+        form.reset();
+        const submitBtn = form.querySelector('[type="submit"]');
+        if (submitBtn) {
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.classList.add('btn-success');
+            submitBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Proposta enviada! Verifique seu WhatsApp';
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-success');
+                submitBtn.innerHTML = originalHTML;
+            }, 5000);
+        }
     });
 }
 
@@ -381,8 +395,16 @@ function initLGPD() {
     if (!banner || !acceptBtn) return;
 
     if (!localStorage.getItem('lgpd_accepted')) {
-        setTimeout(() => { banner.hidden = false; }, 2000);
+        setTimeout(() => {
+            banner.hidden = false;
+            acceptBtn.focus();
+        }, 2000);
     }
+
+    banner.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') { e.preventDefault(); acceptBtn.focus(); }
+        if (e.key === 'Escape') { localStorage.setItem('lgpd_accepted', '1'); banner.hidden = true; }
+    });
 
     acceptBtn.addEventListener('click', () => {
         localStorage.setItem('lgpd_accepted', '1');

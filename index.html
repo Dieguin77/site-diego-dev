@@ -30,8 +30,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap" as="style" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
     <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
@@ -187,7 +189,7 @@
     </header>
 
     <main>
-        <section class="hero section" id="hero">
+        <section class="hero section" id="hero" aria-labelledby="heroHeadline">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
                     <p class="eyebrow">Estratégia + Design + Conversão</p>
@@ -244,11 +246,11 @@
             </div>
         </section>
 
-        <section class="section" id="servicos">
+        <section class="section" id="servicos" aria-labelledby="servicos-title">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="eyebrow">Serviços sob medida</p>
-                    <h2>Soluções sob medida para transformar seu site em um ativo de vendas</h2>
+                    <h2 id="servicos-title">Soluções sob medida para transformar seu site em um ativo de vendas</h2>
                 </div>
                 <div class="service-grid">
                     <article class="service-card reveal">
@@ -417,11 +419,11 @@
             </div>
         </section>
 
-        <section class="section" id="provas">
+        <section class="section" id="provas" aria-labelledby="provas-title">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="eyebrow">Resultados e prova social</p>
-                    <h2>Projetos reais, resultados consistentes e confiança de clientes</h2>
+                    <h2 id="provas-title">Projetos reais, resultados consistentes e confiança de clientes</h2>
                     <p class="section-intro">
                         Mais de 50 projetos entregues, 45+ clientes atendidos e 98% de satisfação. Cada entrega é desenhada para
                         gerar percepção de valor e aumentar a taxa de contato qualificado.
@@ -450,7 +452,7 @@
                             <i class="fas fa-star" aria-hidden="true"></i> Projeto em Destaque
                         </span>
                         <div class="screenshot-frame">
-                            <img src="imagem/print-tocando-pra-valer.jpg" alt="Tocando Pra Valer — plataforma musical para músicos e ministérios de louvor" fetchpriority="high">
+                            <img src="imagem/print-tocando-pra-valer.jpg" alt="Tocando Pra Valer — plataforma musical para músicos e ministérios de louvor" fetchpriority="high" width="1280" height="720">
                         </div>
                     </div>
                     <div class="featured-project-content">
@@ -501,92 +503,92 @@
                 <div class="portfolio-grid">
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/esli.jpg" alt="Site para advogado previdenciário Dr. Esli Silva" loading="lazy">
+                            <img src="imagem/esli.jpg" alt="Site para advogado previdenciário Dr. Esli Silva" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Advocacia Previdenciária</h3>
                             <p>Landing page de autoridade para advogado com foco em captação de clientes via INSS.</p>
-                            <a href="https://eslisilvaadvocacia.com.br/" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://eslisilvaadvocacia.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: Advocacia Previdenciária Dr. Esli Silva">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/decoracompany.png" alt="Site para Gesso Decoracompany - Drywall e Gesso" loading="lazy">
+                            <img src="imagem/decoracompany.png" alt="Site para Gesso Decoracompany - Drywall e Gesso" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Gesso & Drywall</h3>
                             <p>Site institucional para empresa de gesso e drywall de alto padrão em Teixeira de Freitas, BA.</p>
-                            <a href="https://gessodecoracompany.com.br/" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://gessodecoracompany.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: Gesso Decoracompany">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/welding.png" alt="CR Welding - Projeto internacional de construção industrial" loading="lazy">
+                            <img src="imagem/welding.png" alt="CR Welding - Projeto internacional de construção industrial" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Projeto Internacional</h3>
                             <p>Site em inglês para empresa de construção industrial e soldagem de estruturas metálicas.</p>
-                            <a href="https://dieguin77.github.io/Celio-Welding/" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://dieguin77.github.io/Celio-Welding/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: CR Welding — construção industrial">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/print-pr-gladston.jpg" alt="Projeto para autor e palestrante" loading="lazy">
+                            <img src="imagem/print-pr-gladston.jpg" alt="Projeto para autor e palestrante" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Autor e Palestrante</h3>
                             <p>Página orientada a posicionamento de marca e venda de mentoria.</p>
-                            <a href="https://gladstonfreire.com.br/" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://gladstonfreire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: Gladston Freire — Autor e Palestrante">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/home-rucilan.jpeg" alt="Honório - Consultor de Consórcios e Investimentos" loading="lazy">
+                            <img src="imagem/home-rucilan.jpeg" alt="Honório - Consultor de Consórcios e Investimentos" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Consultor de Consórcios</h3>
                             <p>Site para consultor multimarcas de consórcios e investimentos com foco em geração de leads.</p>
-                            <a href="https://dieguin77.github.io/rucirlan/" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://dieguin77.github.io/rucirlan/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: Rucirlan — Consultor de Consórcios">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/umadgov-2026.jpeg" alt="UMADGOV 2026 - sistema de venda das camisas oficiais do evento" loading="lazy">
+                            <img src="imagem/umadgov-2026.jpeg" alt="UMADGOV 2026 - sistema de venda das camisas oficiais do evento" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>UMADGOV 2026</h3>
                             <p>Sistema web para venda das camisas oficiais do evento, com geração de PIX e painel administrativo.</p>
-                            <a href="https://umadgov.com.br" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://umadgov.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: UMADGOV 2026">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/sistema-lista-tarefas.png" alt="Sistema de Lista de Tarefas com CRUD e reordenação" loading="lazy">
+                            <img src="imagem/sistema-lista-tarefas.png" alt="Sistema de Lista de Tarefas com CRUD e reordenação" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Lista de Tarefas</h3>
                             <p>API REST própria para gestão de tarefas, com CRUD completo, reordenação por drag-and-drop e persistência em banco de dados.</p>
-                            <a href="https://sistema-tarefas-app.fly.dev/" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://sistema-tarefas-app.fly.dev/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: Sistema de Lista de Tarefas">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/everlabs-fullstack.jpeg" alt="Everlabs Full Stack - sistema de gestão de tarefas Kanban" loading="lazy">
+                            <img src="imagem/everlabs-fullstack.jpeg" alt="Everlabs Full Stack - sistema de gestão de tarefas Kanban" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Everlabs Full Stack</h3>
                             <p>Sistema fullstack de gestão de tarefas estilo Kanban, com autenticação JWT e Clean Architecture.</p>
-                            <a href="https://everlabs-fullstack.vercel.app" target="_blank" rel="noopener noreferrer">Acessar site</a>
+                            <a href="https://everlabs-fullstack.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Acessar site: Everlabs Full Stack">Acessar site</a>
                         </div>
                     </article>
                     <article class="portfolio-card reveal">
                         <div class="card-image">
-                            <img src="imagem/banner-rosi-medina.jpg" alt="Banner de divulgação para a confeitaria Caseirinhos Gourmet" loading="lazy">
+                            <img src="imagem/banner-rosi-medina.jpg" alt="Banner de divulgação para a confeitaria Caseirinhos Gourmet" loading="lazy" width="1280" height="800">
                         </div>
                         <div>
                             <h3>Caseirinhos Gourmet</h3>
                             <p>Peça de design para divulgação de confeitaria artesanal, com identidade visual e cardápio de bolos gourmet.</p>
-                            <a href="https://instagram.com/caseirinhos_comproposito" target="_blank" rel="noopener noreferrer">Ver no Instagram</a>
+                            <a href="https://instagram.com/caseirinhos_comproposito" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram: Caseirinhos Gourmet">Ver no Instagram</a>
                         </div>
                     </article>
                 </div>
