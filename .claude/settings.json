@@ -3,7 +3,19 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git ls-tree *)",
+      "Bash(git -C \"d:\\\\diegodev.dev.br\" status --short)",
+      "Bash(git commit -m 'Adiciona Measurement ID real do GA4 \\(G-18HRSQXSXP\\) *)",
+      "PowerShell(npx playwright --version 2>$null)",
+      "PowerShell(node --version 2>$null)",
+      "PowerShell(npx playwright install chromium --with-deps 2>&1)",
+      "PowerShell(tail -5)",
+      "PowerShell(npx playwright install chromium 2>&1)",
+      "Bash(git commit -m 'Atualiza título e metas: remove localidade, posiciona por serviço *)"
+    ],
+    "additionalDirectories": [
+      "d:\\diegodev.dev.br\\imagem"
     ]
   }
 }
