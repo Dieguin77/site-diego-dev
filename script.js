@@ -32,7 +32,7 @@ function initHeroABTest() {
     // Apenas o variant B requer substituição, eliminando CLS para usuários do variant A.
     const variantB = {
         headline: 'Transformo seu site em uma <span>máquina de oportunidades</span> para o seu comercial.',
-        subheadline: 'Mais de 50 projetos entregues e 98% de satisfação. Estratégia, UX e código de alta performance trabalhando para gerar contatos qualificados com previsibilidade.',
+        subheadline: 'Estratégia, UX e código de alta performance trabalhando para gerar contatos qualificados com previsibilidade.',
         cta: 'Quero atrair mais clientes'
     };
 

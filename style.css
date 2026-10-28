@@ -66,6 +66,10 @@ ul {
     padding: 72px 0;
 }
 
+@media (max-width: 767px) {
+    .section { padding: 48px 0; }
+}
+
 .section-sm {
     padding: 20px 0 10px;
 }
@@ -659,6 +663,7 @@ h1 span {
 .portfolio-card:hover .card-image img { transform: scale(1.06); }
 
 .about-card p { max-width: 80ch; }
+.about-card p + p { margin-top: 12px; }
 
 .authority-strip article {
     background: var(--surface-strong);
