@@ -54,6 +54,7 @@ function initHeroABTest() {
 }
 
 function trackEvent(eventName, metadata = {}) {
+    metadata = { ab_variant: localStorage.getItem('lp_ab_variant_hero') || 'NA', ...metadata };
     const payload = {
         event: eventName,
         timestamp: new Date().toISOString(),
@@ -330,6 +331,26 @@ function initSmoothScrollAndSpy() {
     updateSpy();
 }
 
+// Cópia do lead por e-mail (FormSubmit), para não depender do visitante enviar a mensagem no WhatsApp.
+// Falha silenciosa: o fluxo do WhatsApp continua mesmo se o envio não funcionar.
+function sendLeadByEmail({ nome, telefone, tipo, detalhes }) {
+    fetch('https://formsubmit.co/ajax/diegobatistt@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+            _subject: `Novo lead do site: ${nome}`,
+            _template: 'table',
+            _captcha: 'false',
+            Nome: nome,
+            WhatsApp: telefone,
+            'Tipo de projeto': tipo || 'Não informado',
+            'Objetivo principal': detalhes || 'Não informado',
+            'Versão do teste A/B': localStorage.getItem('lp_ab_variant_hero') || 'NA'
+        }),
+        keepalive: true
+    }).catch(() => {});
+}
+
 function initLeadForm() {
     const form = document.getElementById('leadForm');
     if (!form) return;
@@ -363,9 +384,10 @@ function initLeadForm() {
         if (announcer) announcer.textContent = '';
 
         trackEvent('lead_form_submit', {
-            tipo_projeto: tipo || 'nao_informado',
-            ab_variant: localStorage.getItem('lp_ab_variant_hero') || 'NA'
+            tipo_projeto: tipo || 'nao_informado'
         });
+
+        sendLeadByEmail({ nome, telefone, tipo, detalhes });
 
         const message = [
             'Ola Diego! Vim pela landing page e quero um orcamento.',
