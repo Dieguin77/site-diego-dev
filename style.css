@@ -1361,3 +1361,28 @@ h1 span {
         scroll-behavior: auto !important;
     }
 }
+
+/* Avaliações de clientes */
+.reviews-block { margin-top: 48px; }
+.reviews-title { font-size: clamp(1.4rem, 5.8vw, 2.45rem); }
+.reviews-block .testimonial-grid { margin-top: 24px; }
+.review-card { display: flex; flex-direction: column; gap: 14px; }
+.review-stars { color: #fbbc04; font-size: 0.95rem; letter-spacing: 3px; }
+.review-card blockquote { margin: 0; font-weight: 600; flex: 1; }
+.review-card footer { display: flex; align-items: center; gap: 12px; }
+.review-card footer div { display: flex; flex-direction: column; min-width: 0; }
+.review-card footer span:not(.review-avatar) { color: var(--muted); font-size: 0.85rem; }
+.review-avatar {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    background: rgba(118, 156, 255, 0.18);
+    border: 1px solid rgba(118, 156, 255, 0.35);
+}
+@media (min-width: 1024px) {
+    .reviews-block .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+}
