@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://diegodev.dev.br/sitemap.xml
+Sitemap: https://dieguin77.github.io/site-diego-dev/sitemap.xml
