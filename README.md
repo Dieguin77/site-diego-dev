@@ -10,7 +10,7 @@ Landing page comercial de portfólio, criada para apresentar serviços de desenv
 
 ## 🌐 Projeto Online
 
-https://dieguin77.github.io/site-diego-dev/
+https://diegodev.dev.br
 
 ## Funcionalidades
 
@@ -28,7 +28,7 @@ https://dieguin77.github.io/site-diego-dev/
 
 - HTML5, CSS3 e JavaScript puro — sem framework ou etapa de build
 - Google Analytics 4 (`gtag.js`) para métricas e eventos de conversão
-- **Hospedagem**: GitHub Pages, no endereço gratuito `dieguin77.github.io/site-diego-dev` (o domínio `diegodev.dev.br` não foi renovado em 11/2026)
+- **Hospedagem**: GitHub Pages, com domínio próprio (`diegodev.dev.br`, configurado via `CNAME`)
 
 ## Estrutura do Projeto
 
