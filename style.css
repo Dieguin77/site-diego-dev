@@ -107,7 +107,7 @@ ul {
     border: 0;
 }
 
-/* M1 — LCP: hero copy visível desde o primeiro frame; só anima transform */
+/* M1: LCP: hero copy visível desde o primeiro frame; só anima transform */
 .hero-copy.reveal {
     opacity: 1;
 }
@@ -733,7 +733,7 @@ h1 span {
 }
 
 /* ============================================================
-   CONTACT SECTION — Formulário de lead
+   CONTACT SECTION: Formulário de lead
    ============================================================ */
 
 .contact-grid {
@@ -916,7 +916,7 @@ h1 span {
 }
 
 /* ============================================================
-   PORTFOLIO — card solitário centralizado
+   PORTFOLIO: card solitário centralizado
    ============================================================ */
 
 @media (min-width: 860px) {
@@ -928,7 +928,7 @@ h1 span {
 }
 
 /* ============================================================
-   FEATURED PROJECT — Tocando Pra Valer
+   FEATURED PROJECT: Tocando Pra Valer
    ============================================================ */
 
 .featured-project {
@@ -986,7 +986,7 @@ h1 span {
         0 0 80px rgba(109, 164, 255, 0.14);
 }
 
-/* — Image column: glassmorphism dark stage for the screenshot — */
+/* Image column: glassmorphism dark stage for the screenshot */
 
 .featured-project-image {
     position: relative;
@@ -1002,7 +1002,7 @@ h1 span {
     border-bottom: 1px solid rgba(109, 164, 255, 0.14);
 }
 
-/* — Screenshot frame: bordered & shadowed container around the image — */
+/* Screenshot frame: bordered & shadowed container around the image */
 
 .screenshot-frame {
     width: 100%;
@@ -1048,7 +1048,7 @@ h1 span {
 
 .featured-badge i { font-size: 0.66rem; }
 
-/* — Content column — */
+/* Content column */
 
 .featured-project-content {
     padding: 26px 22px;

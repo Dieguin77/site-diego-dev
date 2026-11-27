@@ -26,7 +26,7 @@ https://diegodev.dev.br
 
 ## Tecnologias
 
-- HTML5, CSS3 e JavaScript puro — sem framework ou etapa de build
+- HTML5, CSS3 e JavaScript puro, sem framework ou etapa de build
 - Google Analytics 4 (`gtag.js`) para métricas e eventos de conversão
 - **Hospedagem**: GitHub Pages, com domínio próprio (`diegodev.dev.br`, configurado via `CNAME`)
 
@@ -56,7 +56,7 @@ Abra `index.html` diretamente no navegador, ou sirva a pasta com qualquer servid
 
 ## Licença
 
-Este projeto está sob a licença MIT — veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## Desenvolvedor
 
