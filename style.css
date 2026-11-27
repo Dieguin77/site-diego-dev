@@ -1386,3 +1386,65 @@ h1 span {
 @media (min-width: 1024px) {
     .reviews-block .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Planos e preços */
+.pricing-grid { display: grid; gap: 16px; }
+.price-card { display: flex; flex-direction: column; gap: 14px; padding: 26px 22px; }
+.price-card h3 { font-size: 1.3rem; }
+.price-badge {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #04210f;
+    background: var(--success);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+.price-value {
+    font-family: var(--font-title);
+    font-size: clamp(2.6rem, 10vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text);
+}
+.price-value small {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-right: 6px;
+    vertical-align: 0.9em;
+}
+.price-sub { color: var(--muted); }
+.price-card .price-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    display: grid;
+    gap: 9px;
+    color: #d7e5ff;
+    flex: 1;
+}
+.price-list li { display: flex; gap: 10px; align-items: flex-start; }
+.price-list i { color: var(--success); margin-top: 5px; }
+.price-card.featured {
+    border-color: rgba(48, 198, 124, 0.45);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), var(--neon-success);
+}
+.pricing-note { margin-top: 18px; color: var(--muted); font-size: 0.92rem; text-align: center; }
+.pricing-note a { color: var(--primary); font-weight: 700; }
+@media (min-width: 760px) {
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 920px; margin: 0 auto; }
+}
+
+/* Avaliações em print do Google */
+.review-print { margin: 0; padding: 0; overflow: hidden; background-color: #131313; }
+.review-print img { display: block; width: 100%; height: auto; }
+@media (min-width: 1024px) {
+    .reviews-block .review-prints { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tecnologia resumida */
+.stack-compact { max-width: 900px; margin: 0 auto; }
