@@ -43,11 +43,16 @@ body {
 
 .soft-bg { background: #0e0f12; }
 
-.scroll-progress { display: none !important; }
+/* Barra de progresso de leitura: cresce conforme a pessoa desce a página */
+.scroll-progress {
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--red));
+    box-shadow: none;
+}
 
 /* ---------- Cabeçalho ---------- */
 .site-header {
-    background: rgba(11, 12, 14, 0.94);
+    background: var(--bg);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid var(--line);
@@ -61,13 +66,12 @@ body {
 
 .brand-logo {
     display: block;
-    width: 42px;
-    height: 28px;
-    margin-right: 10px;
+    width: 57px;
+    height: 38px;
 }
 
 @media (min-width: 860px) {
-    .site-header { background: rgba(11, 12, 14, 0.94); }
+    .site-header { background: var(--bg); }
 
     .desktop-nav { color: var(--muted); }
 
