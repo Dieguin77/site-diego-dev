@@ -1,0 +1,343 @@
+/* =========================================================
+   Tema "Noite": preto profundo, vermelho e azul da logo,
+   luz de cinema. Carregado depois do style.css e só
+   sobrescreve o visual (nada de conteúdo muda aqui).
+   Sem aurora, feixes, vidro fosco nem brilho neon.
+   ========================================================= */
+
+:root {
+    --bg: #0b0c0e;
+    --bg-soft: #111215;
+    --surface: #141519;
+    --surface-strong: #17181c;
+    --text: #ecedef;
+    --muted: #a3a9b2;
+    --line: rgba(255, 255, 255, 0.09);
+    --primary: #5c95f0;          /* azul da logo, clareado para ler no preto */
+    --red: #e3202b;              /* vermelho da logo */
+    --red-hover: #f0303a;
+    --red-text: #ff4d57;         /* vermelho para texto no fundo escuro */
+    --success: #30c67c;
+    --glow: none;
+    --neon-primary: none;
+    --neon-success: none;
+    --radius: 6px;
+    --border-grad: none;
+    --noise: none;
+}
+
+/* Fundo: preto liso com uma luz fraca vindo de cima, como um refletor */
+body {
+    background:
+        radial-gradient(70% 45% at 50% -12%, rgba(255, 255, 255, 0.07) 0%, transparent 70%),
+        var(--bg);
+    background-attachment: fixed;
+}
+
+.bg-beams,
+.bg-noise,
+.bg-aurora,
+.cursor-glow {
+    display: none !important;
+}
+
+.soft-bg { background: #0e0f12; }
+
+.scroll-progress {
+    background: var(--red);
+    box-shadow: none;
+    height: 2px;
+}
+
+/* ---------- Cabeçalho ---------- */
+.site-header {
+    background: rgba(11, 12, 14, 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+}
+
+.brand-logo {
+    display: block;
+    width: 42px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+@media (min-width: 860px) {
+    .site-header { background: rgba(11, 12, 14, 0.94); }
+
+    .desktop-nav { color: var(--muted); }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active { color: var(--text); }
+
+    .desktop-nav a::after {
+        background: var(--red);
+        box-shadow: none;
+    }
+}
+
+.brand span {
+    color: var(--primary);
+    text-shadow: none;
+}
+
+.menu-toggle,
+.mobile-menu a {
+    background: var(--surface);
+    border-color: var(--line);
+    border-radius: var(--radius);
+}
+
+.mobile-menu { background: rgba(11, 12, 14, 0.98); }
+.mobile-menu a:hover { border-color: rgba(255, 255, 255, 0.28); }
+
+/* ---------- Títulos e textos ---------- */
+h1 span {
+    color: var(--red-text);
+    text-shadow: none;
+}
+
+.eyebrow {
+    color: #c9ccd2;
+    letter-spacing: 0.14em;
+}
+
+.eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: var(--red);
+}
+
+.tech-line { color: var(--muted); }
+.section-cta-inline p { color: var(--text); }
+
+/* ---------- Botões ---------- */
+.btn {
+    border-radius: var(--radius);
+    letter-spacing: 0.01em;
+}
+
+.btn:hover {
+    transform: none;
+    filter: none;
+}
+
+.btn-primary::before { display: none; }
+
+.btn-primary {
+    background: var(--red);
+    color: #fff;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: var(--red-hover);
+    box-shadow: none;
+}
+
+.btn i,
+.hero-card .btn i { color: inherit; }
+
+.trust-inline i { color: var(--primary); }
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: rgba(255, 255, 255, 0.24);
+}
+
+.btn-secondary:hover { border-color: rgba(255, 255, 255, 0.6); }
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* ---------- Cartões: superfície lisa, borda fina, sem vidro ---------- */
+.hero-card,
+.service-card,
+.portfolio-card,
+.testimonial-card,
+.faq-item,
+.metric-item,
+.problem-card,
+.solution-card,
+.about-card,
+.final-cta,
+.contact-card,
+.featured-project,
+.lgpd-banner {
+    background-color: var(--surface);
+    background-image: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+}
+
+.hero-card::after,
+.service-card::after,
+.portfolio-card::after,
+.testimonial-card::after,
+.faq-item::after,
+.metric-item::after,
+.problem-card::after,
+.solution-card::after,
+.about-card::after,
+.final-cta::after,
+.featured-project::after {
+    display: none;
+}
+
+.glow-card::before { display: none; }
+
+.testimonial-card.reveal:hover,
+.featured-project.reveal:hover,
+.stack-chip.reveal:hover,
+.contact-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.portfolio-card:hover .card-image img,
+.featured-project:hover .screenshot-frame img {
+    transform: none;
+}
+
+.hero-card i,
+.stack-category-title i,
+.price-list i,
+.solution-card i {
+    color: var(--primary);
+}
+
+.problem-card i { color: var(--red-text); }
+
+.metric-number,
+.authority-strip strong {
+    text-shadow: none;
+}
+
+.stack-chip,
+.featured-tech span,
+.footer-social a {
+    background: transparent;
+    border-color: var(--line);
+    border-radius: var(--radius);
+    box-shadow: none;
+}
+
+.footer-social a { border-radius: 50%; }
+.footer-social a:hover { box-shadow: none; border-color: rgba(255, 255, 255, 0.4); }
+
+.featured-badge {
+    background: var(--red);
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.featured-project-content h3 { text-shadow: none; }
+
+.screenshot-frame {
+    border-radius: var(--radius);
+    box-shadow: none;
+}
+
+/* ---------- Preços ---------- */
+.price-card.featured {
+    border-color: rgba(227, 32, 43, 0.65);
+    box-shadow: none;
+}
+
+.price-badge {
+    background: var(--red);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.price-card .price-list { color: var(--text); }
+
+.price-card .price-value { color: #fff; }
+.price-card .price-value small { color: var(--muted); }
+
+/* ---------- Sobre mim com foto ---------- */
+.about-com-foto {
+    display: grid;
+    gap: 24px;
+    align-items: center;
+}
+
+.about-foto {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+
+@media (min-width: 760px) {
+    .about-com-foto {
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+        padding: 28px;
+    }
+
+    .about-foto { max-width: none; }
+}
+
+/* ---------- Formulário ---------- */
+.lead-form textarea,
+.lead-form select,
+.lead-form input {
+    background: var(--bg-soft);
+    border-color: var(--line);
+    border-radius: var(--radius);
+}
+
+.lead-form textarea:focus,
+.lead-form select:focus,
+.lead-form input:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+}
+
+.lead-form select option { background: var(--bg-soft); }
+
+/* ---------- Rodapé e botão do WhatsApp ---------- */
+.site-footer {
+    background: #08090a;
+    border-top: 1px solid var(--line);
+}
+
+.footer-wrap { color: var(--muted); }
+
+.whatsapp-float {
+    background: #1faa59;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; }
+}

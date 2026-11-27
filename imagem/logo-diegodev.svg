@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="236 186 1046 698" role="img" aria-label="DiegoDev">
+  <title>DiegoDev</title>
+  <defs>
+    <clipPath id="barra-meio"><rect x="626" y="531" width="318" height="41" rx="20.5"/></clipPath>
+  </defs>
+  <!-- código: quadrado, sinal de menor e barra -->
+  <path fill="#e3202b" d="M397 202H565L528 333H397Z"/>
+  <path fill="#e3202b" d="M412 400H482L322 556L432 660L412 716L250 553Z"/>
+  <path fill="#e3202b" d="M557 400H617L483 866H420Z"/>
+  <!-- linhas de código -->
+  <rect fill="#eef1f5" x="668" y="400" width="228" height="38" rx="19"/>
+  <g clip-path="url(#barra-meio)">
+    <rect fill="#1e7bf2" x="626" y="531" width="318" height="41"/>
+    <path fill="#e3202b" d="M802 531H944V572H795Z"/>
+  </g>
+  <rect fill="#eef1f5" x="610" y="618" width="340" height="40" rx="20"/>
+  <!-- letra D -->
+  <path fill="#1e7bf2" d="M860 200C1112 204 1266 372 1266 546C1266 728 1108 864 878 868C1016 798 1090 690 1090 552C1090 430 1046 300 964 232Z"/>
+  <path fill="#eef1f5" d="M622 200H860C970 204 1060 322 1090 498C1052 398 1004 344 930 338H580Z"/>
+</svg>

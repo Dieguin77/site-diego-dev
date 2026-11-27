@@ -8,10 +8,11 @@
     <meta name="keywords" content="desenvolvedor web, desenvolvedor web minas gerais, desenvolvedor web governador valadares, criacao de sites, landing page, site institucional, desenvolvimento web brasil">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="DiegoDev">
-    <meta name="theme-color" content="#060914">
+    <meta name="theme-color" content="#0b0c0e">
     <link rel="canonical" href="https://diegodev.dev.br/">
-    <link rel="icon" type="image/png" href="imagem/favycon.png">
-    <link rel="apple-touch-icon" href="imagem/favycon.png">
+    <link rel="icon" type="image/svg+xml" href="imagem/logo-diegodev.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagem/favicon-32.png">
+    <link rel="apple-touch-icon" href="imagem/apple-touch-icon.png">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
@@ -38,6 +39,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
     <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tema-noite.css">
     <noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
     <!-- GA4 Consent Mode v2 — padrão negado até aceite do banner LGPD -->
@@ -99,7 +101,7 @@
                     "@type": "Organization",
                     "name": "DiegoDev",
                     "url": "https://diegodev.dev.br/",
-                    "logo": "https://diegodev.dev.br/imagem/favycon.png",
+                    "logo": "https://diegodev.dev.br/imagem/logo-diegodev-512.png",
                     "sameAs": [
                         "https://www.linkedin.com/in/diegobatistt",
                         "https://github.com/Dieguin77"
@@ -195,7 +197,7 @@
 
     <header class="site-header" id="topo">
         <div class="container header-wrap">
-            <a class="brand" href="#topo" aria-label="Voltar ao topo">DIEGO<span>DEV</span></a>
+            <a class="brand" href="#topo" aria-label="DiegoDev, voltar ao topo"><img class="brand-logo" src="imagem/logo-diegodev.svg" alt="" width="42" height="28">DIEGO<span>DEV</span></a>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
                 <span></span>
@@ -439,7 +441,9 @@
 
         <section class="section soft-bg" id="sobre" aria-labelledby="sobre-title">
             <div class="container">
-                <article class="about-card reveal">
+                <article class="about-card about-com-foto reveal">
+                    <img class="about-foto" src="imagem/diego-perfil.jpg" alt="Diego Batista, desenvolvedor web" width="640" height="763" loading="lazy" decoding="async">
+                    <div class="about-texto">
                     <p class="eyebrow">Sobre mim</p>
                     <h2 id="sobre-title">Desenvolvedor focado em qualidade técnica, prazo e impacto real no negócio</h2>
                     <p>
@@ -451,6 +455,7 @@
                         aumentar confiança, melhorar experiência e converter visitas em oportunidades reais. Você fala
                         direto comigo, do primeiro contato ao suporte depois da entrega.
                     </p>
+                    </div>
                 </article>
             </div>
         </section>
