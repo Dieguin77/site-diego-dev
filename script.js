@@ -28,7 +28,7 @@ function initHeroABTest() {
 
     if (!headline || !subheadline || !primaryCta) return;
 
-    // Variant A é renderizada diretamente no HTML — sem manipulação de DOM para 50% dos visitantes.
+    // Variant A é renderizada diretamente no HTML, sem manipulação de DOM para 50% dos visitantes.
     // Apenas o variant B requer substituição, eliminando CLS para usuários do variant A.
     const variantB = {
         headline: 'Transformo seu site em uma <span>máquina de oportunidades</span> para o seu comercial.',

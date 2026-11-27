@@ -48,10 +48,10 @@
   <!-- Linha separadora sob a marca -->
   <line x1="72" y1="128" x2="296" y2="128" stroke="rgba(109,164,255,0.28)" stroke-width="1"/>
 
-  <!-- Headline principal — linha 1 -->
+  <!-- Headline principal: linha 1 -->
   <text x="72" y="244" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif"
         font-size="64" font-weight="800" fill="#f1f6ff" letter-spacing="-1.5">Desenvolvedor Web</text>
-  <!-- Headline principal — linha 2 (cor primária) -->
+  <!-- Headline principal: linha 2 (cor primária) -->
   <text x="72" y="324" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif"
         font-size="64" font-weight="800" fill="#6da4ff" letter-spacing="-1.5">Full Stack</text>
 
@@ -62,14 +62,14 @@
   <!-- Divisória horizontal -->
   <line x1="72" y1="432" x2="650" y2="432" stroke="rgba(118,156,255,0.18)" stroke-width="1"/>
 
-  <!-- Estatísticas — linha 1 -->
+  <!-- Estatísticas: linha 1 -->
   <text x="72"  y="482" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="25" font-weight="800" fill="#6da4ff">50+</text>
   <text x="128" y="482" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="25" font-weight="400" fill="#8ba3c7"> projetos entregues</text>
   <circle cx="410" cy="474" r="3" fill="rgba(118,156,255,0.38)"/>
   <text x="428" y="482" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="25" font-weight="800" fill="#30c67c">98%</text>
   <text x="492" y="482" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="25" font-weight="400" fill="#8ba3c7"> de satisfação</text>
 
-  <!-- Estatísticas — linha 2 -->
+  <!-- Estatísticas: linha 2 -->
   <text x="72"  y="522" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="25" font-weight="800" fill="#a0c6ff">3 anos</text>
   <text x="162" y="522" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="25" font-weight="400" fill="#8ba3c7"> de experiência</text>
 

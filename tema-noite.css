@@ -43,11 +43,7 @@ body {
 
 .soft-bg { background: #0e0f12; }
 
-.scroll-progress {
-    background: var(--red);
-    box-shadow: none;
-    height: 2px;
-}
+.scroll-progress { display: none !important; }
 
 /* ---------- Cabeçalho ---------- */
 .site-header {
@@ -78,10 +74,7 @@ body {
     .desktop-nav a:hover,
     .desktop-nav a.active { color: var(--text); }
 
-    .desktop-nav a::after {
-        background: var(--red);
-        box-shadow: none;
-    }
+    .desktop-nav a::after { display: none; }
 }
 
 .brand span {
@@ -110,14 +103,10 @@ h1 span {
     letter-spacing: 0.14em;
 }
 
-.eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 18px;
-    height: 2px;
-    margin-right: 10px;
-    vertical-align: middle;
-    background: var(--red);
+/* Sem traços decorativos em lugar nenhum (pedido do Diego, 27/11) */
+.other-projects-label::before,
+.other-projects-label::after {
+    display: none;
 }
 
 .tech-line { color: var(--muted); }
